@@ -1,4 +1,5 @@
-import DataTable from "../components/Table";
+// import DataTable from "../components/Table";
+import SortableTable from "../components/SortableTable";
 import { BsBicycle } from "react-icons/bs";
 import { MdDirectionsCar } from "react-icons/md";
 import { FaBus } from "react-icons/fa";
@@ -73,7 +74,7 @@ const TablePage = () => {
   ];
   return (
     <div>
-      <DataTable data={data} configData={configData} />
+      <SortableTable data={data} config={configData} />
     </div>
   );
 };
