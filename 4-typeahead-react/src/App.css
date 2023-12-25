@@ -1,0 +1,19 @@
+.App {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.listcontainer {
+  list-style: none;
+  padding: 0;
+  overflow: hidden;
+}
+.listitem {
+  text-align: left;
+
+  /* padding: 0; */
+}
+.listitem:hover {
+  cursor: pointer;
+}
