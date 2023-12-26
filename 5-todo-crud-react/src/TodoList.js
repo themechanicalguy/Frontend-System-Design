@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 
 const TodoList = () => {
   const [inputValue, setInputValue] = useState("");
@@ -6,14 +6,12 @@ const TodoList = () => {
   const [currentEditItem, setCurrentEditItem] = useState(null);
   const [toggle, settoggle] = useState(true);
 
-  // console.log(inputValue);
   function handleClick() {
     if (inputValue && toggle && !currentEditItem) {
       let temp = { id: new Date().getTime().toString(), name: inputValue };
       setTodoList([...todoList, temp]);
       setInputValue("");
     } else {
-      // console.log("here");
       setTodoList(
         todoList.map((elem) => {
           if (elem.id === currentEditItem) {
@@ -23,36 +21,27 @@ const TodoList = () => {
           }
         })
       );
-
       setInputValue("");
       setCurrentEditItem(null);
       settoggle(true);
     }
   }
   const handleDelete = (item) => {
-    console.log(item);
     const index = todoList.indexOf(item);
-    console.log(index);
     const temp = [...todoList];
     temp.splice(index, 1);
     setTodoList([...temp]);
   };
 
   const handleEdit = (item) => {
-    // console.log(item);
     setCurrentEditItem(item.id);
     settoggle(false);
     setInputValue(item.name);
-
-    //remove the item from todoList
-
-    //move item value to Input Field
   };
-
-  console.log(currentEditItem);
 
   return (
     <>
+      {/* input field to add item to todolist */}
       <div className="inputcontainer">
         <input
           type="text"
@@ -62,6 +51,7 @@ const TodoList = () => {
         />
         <button onClick={handleClick}>{!toggle ? "edit" : "Add"}</button>
       </div>
+      {/* container to show list */}
       <div className="todolistcontainer">
         <ul className="list">
           {todoList?.map((item) => {
