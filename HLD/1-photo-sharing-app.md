@@ -2,8 +2,6 @@
 
 ## Approach to Solution
 
-When designing Instagram's frontend/UI layer, I'll follow this approach:
-
 1. **Understand Core Features**: Identify must-have features (feeds management,photo/video, user profile, explore page, and notifications) and nice-to-have features (stories,comments & likes, shopping, direct messaging, account management, profile - followers)
 2. **Component Breakdown**: Design reusable UI elements for each feature, such as Post, Story, and Feed components. Ensure components are modular and responsive for web and mobile.
 3. **State Management**: Determine what state needs to be managed client-side vs server-side. Manage client-side data with efficient fetching, caching, and synchronization. Use a state management library to handle application state.
